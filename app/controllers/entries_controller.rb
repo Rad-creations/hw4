@@ -14,6 +14,9 @@ class EntriesController < ApplicationController
       @entry["occurred_on"] = params["occurred_on"]
       @entry["place_id"] = params["place_id"]
       @entry["user_id"] = @current_user["id"]
+      if params["uploaded_image"] != nil
+        @entry.uploaded_image.attach(params["uploaded_image"])
+      end
       @entry.save
     else
       flash["notice"] = "Login first."

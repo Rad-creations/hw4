@@ -67,4 +67,7 @@ Rails.application.configure do
   
   # So we don't get the "Cannot render console" message in Gitpod
   config.web_console.whiny_requests = false
+
+  # Use local disk storage for Active Storage file uploads
+  config.active_storage.service = :local
 end
